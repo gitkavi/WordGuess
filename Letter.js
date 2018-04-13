@@ -1,6 +1,9 @@
 var Letter = function(char){
     this.char = char;
     var guessed = false;
+    if(this.char === " "){
+        guessed=true;
+    }
 
     this.charReplace = function(){
         if(guessed){

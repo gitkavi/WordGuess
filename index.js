@@ -4,10 +4,10 @@ var inquirer = require("inquirer");
 var items = ["apple", "ball", "cat","dog", "jurrasic park" ];
 var item = items[Math.floor(Math.random()*items.length)];
 
-var word = new Word(item);
+var word = new Word(items[4]);
 console.log(word.originalWord());
 
-var numberOfGuessLeft = item.length+3;
+var numberOfGuessLeft = items[4].length+3;
 
 function guessTheWord(){
     if (numberOfGuessLeft > 0){
@@ -20,7 +20,7 @@ function guessTheWord(){
             word.guessLetter(answers.letter)
             console.log(word.originalWord());
             numberOfGuessLeft --;
-            if(numberOfGuessLeft >= 0 && item === word.originalWord().trim()){
+            if(numberOfGuessLeft >= 0 && items[4] === word.originalWord().trim()){
 
                 return console.log("\n----------------------------\n \nCONGRATULATIONS!!\n \n----------------------------\n");
             }
@@ -30,8 +30,8 @@ function guessTheWord(){
             }
         });    
     }
-    if (numberOfGuessLeft == 0 &&  item != word.originalWord()){
-        console.log("\n----------------------------\n \nThe Original word is '"+item +"'\n \n----------------------------\n");
+    if (numberOfGuessLeft == 0 &&  items[4] != word.originalWord()){
+        console.log("\n----------------------------\n \nThe Original word is '"+items[4] +"'\n \n----------------------------\n");
     }
 }
 
